@@ -6,10 +6,12 @@ defmodule ElixirPay.Numbers do
   end
 
   defp handle_file({:ok, result}) do
-    result
-    |>String.split(",")
-    |>Enum.map(&(String.to_integer &1))
-    |>Enum.sum
+    result =
+      result
+      |>String.split(",")
+      |>Enum.map(&(String.to_integer &1))
+      |>Enum.sum
+    {:ok, %{result: result}}
   end
   defp handle_file({:error, _reason}), do: {:error, "Invalid file!"}
 end
