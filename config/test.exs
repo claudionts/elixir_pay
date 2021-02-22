@@ -8,8 +8,10 @@ use Mix.Config
 config :elixir_pay, ElixirPay.Repo,
   username: "postgres",
   password: "postgres",
-  database: "elixir_pay_test#{System.get_env("MIX_TEST_PARTITION")}",
+  #database: "elixir_pay_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "postgres",
   hostname: "localhost",
+  port: 3010,
   pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,
