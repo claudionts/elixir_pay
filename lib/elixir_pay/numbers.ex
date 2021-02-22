@@ -5,6 +5,11 @@ defmodule ElixirPay.Numbers do
     |>handle_file
   end
 
-  defp handle_file({:ok, file}), do: file
+  defp handle_file({:ok, result}) do
+    result
+    |>String.split(",")
+    |>Enum.map(&(String.to_integer &1))
+    |>Enum.sum
+  end
   defp handle_file({:error, _reason}), do: {:error, "Invalid file!"}
 end
