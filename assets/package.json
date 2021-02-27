@@ -1,0 +1,19 @@
+{
+  "name": "elixir_pay",
+  "description": "",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monatheoctocat/my_package.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monatheoctocat/elixir_pay/issues"
+  },
+  "homepage": "https://github.com/monatheoctocat/elixir_pay"
+}

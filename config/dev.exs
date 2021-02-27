@@ -1,12 +1,15 @@
 use Mix.Config
 
+database_url = System.get_env("DATABASE_URL")
+
 # Configure your database
 config :elixir_pay, ElixirPay.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "postgres",
-  hostname: "localhost",
-  port: 3010,
+  # username: "postgres",
+  # password: "postgres",
+  # database: "postgres",
+  # hostname: "localhost",
+  # port: 3010,
+  url: database_url,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 

@@ -18,4 +18,9 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
 # elixir_pay
-# elixir_pay
+  * Docker build container
+    `docker-compose build`
+  * Docker create database
+    `docker-compose run web mix ecto.create`
+  * Docker up application
+   `docker-compose up`

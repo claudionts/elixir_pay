@@ -20,6 +20,4 @@ defmodule ElixirPay.NumbersTest do
       assert response == expected_response
     end
   end
-
-
 end
