@@ -6,6 +6,7 @@ defmodule ElixirPay.Account do
   alias ElixirPay.User
 
   @primary_key {:id, :binary_id, autogenerate: true}
+  @foreign_key_type :binary_id
 
   @required_param [:balance, :user_id]
 
@@ -20,11 +21,6 @@ defmodule ElixirPay.Account do
     %__MODULE__{}
     |>cast(params, @required_param)
     |>validate_required(@required_param)
-    |>validate_length(:password, min: 6)
-    |>validate_number(:age, greater_than_or_equal_to: 18)
-    |>validate_format(:email, ~r/@/)
-    |>unique_constraint([:email])
-    |>unique_constraint([:nickname])
-    |>put_password_hash()
+    |>check_constraint(:balance, name: :balance_must_be_positive_or_zero)
   end
 end
