@@ -2,6 +2,7 @@ defmodule ElixirPayWeb.AccountsController do
   use ElixirPayWeb, :controller
 
   alias ElixirPay.Account
+  alias ElixirPay.Accounts.Transactions.Response, as: TransactionResponse
 
   action_fallback ElixirPayWeb.FallbackController
 
@@ -22,7 +23,7 @@ defmodule ElixirPayWeb.AccountsController do
   end
 
   def transaction(conn, params) do
-    with {:ok, %{} = transaction} <- ElixirPay.transaction(params) do
+    with {:ok, %TransactionResponse{} = transaction} <- ElixirPay.transaction(params) do
       conn
       |> put_status(:created)
       |> render("transaction.json", transaction: transaction)
