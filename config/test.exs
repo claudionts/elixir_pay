@@ -14,7 +14,8 @@ config :elixir_pay, ElixirPay.Repo,
   # hostname: "localhost",
   # port: 3010,
   url: database_url,
-  pool: Ecto.Adapters.SQL.Sandbox
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
